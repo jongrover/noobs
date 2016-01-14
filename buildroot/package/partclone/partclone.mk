@@ -6,12 +6,16 @@
 
 PARTCLONE_VERSION = 0.2.84
 PARTCLONE_SOURCE = partclone-$(PARTCLONE_VERSION).tar.gz
-PARTCLONE_SITE = http://sourceforge.net/projects/partclone/files/source
+# <<<<<<< HEAD
+# PARTCLONE_SITE = http://sourceforge.net/projects/partclone/files/source
+# =======
+PARTCLONE_SITE = http://sourceforge.net/projects/partclone/files/testing/old
+# >>>>>>> Added extra HID drivers to the kernel configuration for extra keyboard support
 PARTCLONE_LICENSE = GPLv2
 PARTCLONE_LICENSE_FILES = COPYING
 
 define PARTCLONE_BUILD_CMDS
-	$(MAKE) CC="$(TARGET_CC)" LD="$(TARGET_LD)" -C $(@D)/src partclone.restore 
+	$(MAKE) CC="$(TARGET_CC)" LD="$(TARGET_LD)" -C $(@D)/src partclone.restore
 endef
 
 define PARTCLONE_INSTALL_TARGET_CMDS
